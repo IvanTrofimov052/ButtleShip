@@ -32,3 +32,5 @@ def make_shoot(field, shooting_field):
 
         make_shoot(field, shooting_field)
 
+    return [field, shooting_field]
+

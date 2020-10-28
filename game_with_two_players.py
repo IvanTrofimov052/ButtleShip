@@ -12,4 +12,6 @@ def game_with_two_players():
     player_1_shooting_field = CalculatedShootinField()
     player_2_shooting_field = CalculatedShootinField()
 
-    make_shoot(player_1_field, player_1_shooting_field)
+    player_1_field, player_1_shooting_field = make_shoot(player_1_field, player_1_shooting_field)
+
+    player_1_field.show_field ()
