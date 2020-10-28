@@ -1,8 +1,10 @@
+# TODO: comments
 # TODO: checking_field
 # TODO: in make_field_for_player link for cell neightboards
 # TODO: shooting field
 # TODO: shooting
 # TODO: stoping the game
+# TODO: setting file
 
 
 from game_with_two_players import *
