@@ -31,6 +31,9 @@ class CalculatedField():
 
         return False
 
+    def get_field(self):
+        return self.__field
+
 
 # this function chacking the field that make a people
 def checking_field(field):
@@ -66,3 +69,14 @@ def make_field_for_player():
         make_field_for_player()
 
     return field
+
+
+def cheking_end_of_the_game(field):
+    array = field.get_field()
+
+    for i in range(0, field_size):
+        for j in range(0, field_size):
+            if array[i][j].alive == True:
+                return True
+
+    return False
