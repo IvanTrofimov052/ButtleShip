@@ -29,22 +29,3 @@ def get_where_shoot():
 
     return [x, y]
 
-
-def make_shoot(field, shooting_field, field_2):
-    if cheking_end_of_the_game(field) and cheking_end_of_the_game(field_2):
-        coords = get_where_shoot()
-
-        if shooting_field.field[coords[0]][coords[1]].alive == True:
-            print("your shoot yhere")
-            get_where_shoot()
-
-        shooting_field.field[coords[0]][coords[1]].alive = True
-
-        if field.make_shoot(coords[0], coords[1]) and cheking_end_of_the_game(field) and cheking_end_of_the_game(field_2):
-            print("nice")
-            make_shoot(field, shooting_field, field_2)
-
-        return [field, shooting_field]
-
-    return [field, shooting_field]
-
