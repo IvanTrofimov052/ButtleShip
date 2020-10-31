@@ -1,22 +1,22 @@
 from game_calculated import *
 from shooting import *
 
-# this function initilization player - make his fields
-def init_player(field):
-    player_field = CalculatedField(field)
-    shooting_field = CalculatedShootingField()
 
-    return [player_field, shooting_field]
+def game_with_two_players(array_first_player, array_second_player, who, x, y):
+    if who == 1:
+        result, array_first_player[0], array_first_player[1] = make_shoot(array_first_player[0],
+                                                                            array_first_player[1], x, y)
 
+        if (result == 'past'):
+            who = 2
+        else:
+            who = 1
+    else:
+        result, array_second_player[0], array_second_player[1] = make_shoot(array_second_player[0],
+                                                                              array_second_player[1], x, y)
+        if (result == 'past'):
+            who = 1
+        else:
+            who = 2
 
-# this function make a shoot
-def make_shoot(field, shooting_field, x, y):
-        if shooting_field.field[x][y].alive == True:
-            return ["Your shoot here", field, shooting_field]
-
-        shooting_field.field[x][y].alive = True
-
-        if field.make_shoot(x, y):
-            return ["strike", field, shooting_field]
-
-        return ['past', field, shooting_field]
+    return [who, array_first_player, array_second_player, result]

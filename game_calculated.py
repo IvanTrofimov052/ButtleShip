@@ -1,5 +1,5 @@
-field_size = 3
-cout_cell = 3
+field_size = 4
+cout_cell = 4
 
 
 class Cell:
